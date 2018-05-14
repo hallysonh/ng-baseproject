@@ -2,6 +2,8 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import * as express from 'express';
+import * as compression from 'compression';
+
 import { join } from 'path';
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
@@ -18,6 +20,8 @@ const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 const document = require('fs').readFileSync(join(DIST_FOLDER, '/browser/index.html'), 'utf8');
+
+app.use(compression());
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
