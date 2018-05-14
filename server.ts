@@ -3,6 +3,8 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import * as express from 'express';
 import * as compression from 'compression';
+import * as fs from 'fs';
+import * as spdy from 'spdy';
 
 import { join } from 'path';
 import { enableProdMode } from '@angular/core';
@@ -16,10 +18,9 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
-const document = require('fs').readFileSync(join(DIST_FOLDER, '/browser/index.html'), 'utf8');
+const document = fs.readFileSync(join(DIST_FOLDER, '/server/index.html'), 'utf8');
 
 app.use(compression());
 
@@ -39,6 +40,23 @@ app.get('**', async (req, res) => {
   res.send(html);
 });
 
-app.listen(PORT, () => {
-  console.log(`Node server listening on http://localhost:${PORT}`);
+const options = {
+  key: fs.readFileSync('localhost-privkey.pem'),
+  cert: fs.readFileSync('localhost-cert.pem')
+};
+
+spdy.createServer(options, app).listen(443, (error) => {
+    if (error) {
+    console.error(error);
+    return process.exit(1);
+  } else {
+    console.log(`Node server listening on http://localhost`);
+  }
 });
+
+// Redirect from http port 80 to https
+const http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(301, { 'Location': 'https://' + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
