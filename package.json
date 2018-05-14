@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "firebase deploy --only functions,hosting",
-    "build:ssr": "ng build --prod && ng run pronan-loader:server && mv dist/index.html functions",
+    "build:ssr": "ng build --prod && ng run ng-baseproject:server && mv dist/index.html functions",
     "serve:ssr": "ts-node server.ts",
     "build:server": "tsc --p server/tsconfig.json",
     "serve:server": "yarn build:server && yarn deploy",
