@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatGridListModule, MatCardModule, MatMenuModule, MatIconModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { MatButtonModule, MatGridListModule, MatCardModule, MatMenuModule, MatIc
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }
