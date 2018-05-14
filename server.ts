@@ -1,12 +1,12 @@
 // ./index.js
-require('zone.js/dist/zone-node');
-require('reflect-metadata');
-
-import { enableProdMode } from '@angular/core';
-
-// const express = require('express');
+import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
 import * as express from 'express';
 import { join } from 'path';
+import { enableProdMode } from '@angular/core';
+import { renderModuleFactory } from '@angular/platform-server';
+
+import { AppServerModuleNgFactory, LAZY_MODULE_MAP } from './dist/server/main';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -17,18 +17,20 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
-// * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(join(DIST_FOLDER, '/server/main'));
-
-const { renderModuleFactory } = require('@angular/platform-server');
-
 const document = require('fs').readFileSync(join(DIST_FOLDER, '/browser/index.html'), 'utf8');
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
 
+const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
+
 app.get('**', async (req, res) => {
-  const html = await renderModuleFactory(AppServerModuleNgFactory, { document, url: req.path });
+  const html = await renderModuleFactory(AppServerModuleNgFactory, {
+    document, url: req.path,
+    extraProviders: [
+      provideModuleMap(LAZY_MODULE_MAP)
+    ]
+  });
   res.set('Cache-Content', 'public, max-age=600, dc-max-age=1200');
   res.send(html);
 });
