@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule.withServerTransition({ appId: 'pronan-loader' })
   ],
   providers: [],
   bootstrap: [AppComponent]
