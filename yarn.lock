@@ -96,9 +96,9 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@^6.0.0":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-6.0.1.tgz#dde0ef5b1b3ce9989136ca1a73af1de404141bfd"
+"@angular/cdk@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-6.0.2.tgz#65089561f91038ba6d744b9a251998bf99c75097"
   dependencies:
     tslib "^1.7.1"
 
@@ -168,9 +168,9 @@
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-6.0.1.tgz#1e0681ce69eadeb6ac77411d36a82672bb89c68f"
 
-"@angular/material@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@angular/material/-/material-6.0.1.tgz#17558dba6b9372df6cae1d248d2360c9570dc44a"
+"@angular/material@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-6.0.2.tgz#bd4b84d764c3c488856243e9dc05ab14ce3310d7"
   dependencies:
     tslib "^1.7.1"
 
@@ -1230,7 +1230,7 @@ compressible@~2.0.13:
   dependencies:
     mime-db ">= 1.33.0 < 2"
 
-compression@^1.5.2:
+compression@^1.5.2, compression@^1.7.2:
   version "1.7.2"
   resolved "http://registry.npmjs.org/compression/-/compression-1.7.2.tgz#aaffbcd6aaf854b44ebb280353d5ad1651f59a69"
   dependencies:
