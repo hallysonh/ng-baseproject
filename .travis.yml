@@ -13,5 +13,8 @@ notifications:
   email: false
 node_js:
   - node
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
 script:
   - npm run build:ssr
+after_script: greenkeeper-lockfile-upload
