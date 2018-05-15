@@ -1,5 +1,9 @@
 # Ng-baseproject
 
+[![travis build](https://travis-ci.org/hallysonh/ng-baseproject.svg?branch=master)](https://travis-ci.org/hallysonh/ng-baseproject)
+[![Greenkeeper badge](https://badges.greenkeeper.io/hallysonh/ng-baseproject.svg)](https://greenkeeper.io/)
+[![MIT License](https://img.shields.io/github/license/hallysonh/ng-baseproject.svg)](https://opensource.org/licenses/MIT)
+
 Angular 6.0.1 Project configured to SSR (Server Side Rendering), PWA and Perfect Lighthouse Score.
 
 ## Development server
