@@ -14,7 +14,7 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'pronan-loader' }),
+    BrowserModule.withServerTransition({ appId: 'ng-baseproject' }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     SharedModule

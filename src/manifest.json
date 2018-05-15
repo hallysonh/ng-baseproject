@@ -1,6 +1,6 @@
 {
-  "name": "Pronan - Loader",
-  "short_name": "Pronan",
+  "name": "NG-BaseProject",
+  "short_name": "BaseProject",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
