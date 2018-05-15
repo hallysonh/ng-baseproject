@@ -10,7 +10,7 @@
 
 # firebase
 functions/*
-!functions/index.html
+!functions/package.json
 .firebaserc
 *.log
 
