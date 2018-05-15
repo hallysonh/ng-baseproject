@@ -1,18 +1,30 @@
-# PronanLoader
+# Ng-baseproject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+Angular 6.0.1 Project configured to SSR (Server Side Rendering), PWA and Perfect Lighthouse Score.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Server Side Rendering
+
+### Simple Express
+
+In the `main` branch, run `yarn build:ssr && yarn serve:ssr` for a production server. Navigate to `http://localhost:4000`.
+
+### Http2 Server
+
+Switch to `http2` branch and run `yarn build:ssr && yarn serve:ssr` for a HTTP2 production server. Navigate to `https://localhost`.
+
+> Remember to change the key and cert in your prodution environment.
+
+### Firebase SSR hosting
+
+Switch to `firebase` branch, run `firebase init` to config your firebase account, and finally run `yarn build:all && yarn deploy` to build and deploy the app.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
