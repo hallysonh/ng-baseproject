@@ -1,5 +1,5 @@
 {
-  "name": "pronan-loader",
+  "name": "ng-baseproject",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ssr": "ng build --prod && ng run pronan-loader:server",
+    "build:ssr": "ng build --prod && ng run ng-baseproject:server",
     "serve:ssr": "ts-node server.ts"
   },
   "private": true,
