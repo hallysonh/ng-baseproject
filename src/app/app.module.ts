@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { environment } from '../environments/environment';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { SharedModule } from './shared/shared.module';
+import { environment } from '@env/environment';
+import { SharedModule } from '@shared/shared.module';
+import { AppComponent } from '@app/app.component';
+import { HomeComponent } from '@app/home/home.component';
 
 @NgModule({
   declarations: [
