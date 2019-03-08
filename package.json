@@ -40,7 +40,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~10.1.0",
+    "@types/node": "~11.10.6",
     "codelyzer": "~4.3.0",
     "compression": "^1.7.2",
     "express": "^4.16.3",
